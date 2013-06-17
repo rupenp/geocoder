@@ -29,10 +29,24 @@ Usage
 Data
 ------
 ### data/state_abbr_file ###
+``[Full state name],[state abbreviation]`` for each line.
 
+    $ head -5 data/state_abbr_file
+    Alabama,AL
+    Alaska,AK
+    Arizona,AZ
+    Arkansas,AR
+    California,CA
 
 ### data/city_file ###
- 
+``[city name]\t[state abbreviation]:[latitude]\t[longitude]`` for each line.
+
+    $ head -5 data/city_file
+    Abbeville       AL:31.566367    -85.251300
+    Abbeville city  AL:31.566367    -85.251300
+    Adamsville      AL:33.590411    -86.949166
+    Adamsville city AL:33.590411    -86.949166
+    Addison AL:34.200042    -87.177851
 
 REFERENCES
 ----------
