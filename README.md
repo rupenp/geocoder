@@ -6,30 +6,32 @@ Geoconding Twitter users' location profiles into coordinates.
 
 Usage
 ------
-    yuto@tuna:~/geocoder$ python
-    Python 2.7.2+ (default, Jul 20 2012, 22:15:08)
-    [GCC 4.6.1] on linux2
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>> from geocoder import Geocoder
-    >>> state_abbr_filepath = 'data/state_abbr_file'
-    >>> city_filepath = 'data/city_file'
-    >>> gc = Geocoder(state_abbr_filepath, city_filepath)
-    >>> gc.geocode('Houston, TX')
-    ['29.762895', '-95.383173']
-    >>> gc.geocode('Houston, Texas')
-    ['29.762895', '-95.383173']
-    >>> gc.geocode('Houston, MA')
-    >>> gc.geocode('Boston, MA')
-    ['42.321597', '-71.089115']
-    >>> gc.geocode('In your heart')
-    >>>
+### Make input data ###
+    $ cat data/test_data
+    Houston, Texas
+    Houston, TX
+    Boston, MA
+    Boston ,MA
+    Boston , MA
+    Houston, MA
+    In your heart
+
+### Geocode prepared input data ###
+    $ python main.py data/state_abbr_file data/city_file data/test_data
+    29.762895 -95.383173
+    29.762895 -95.383173
+    42.321597 -71.089115
+    42.321597 -71.089115
+    42.321597 -71.089115
+    None
+    None
 
 Data
 ------
-### ``data/state_abbr_file`` ###
+### data/state_abbr_file ###
 
 
-### ``data/city_file`` ###
+### data/city_file ###
  
 
 REFERENCES

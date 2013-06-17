@@ -39,17 +39,3 @@ class Geocoder:
                     point = self.location_dict[state][city]
                     return point
             return None
-
-if __name__ == '__main__':
-    import sys
-    if len(sys.argv) < 4:
-        print "[USAGE]: python %s [state_abbr_filepath] [city_filepath} [location text]" % sys.argv[0]
-        exit()
-
-    state_abbr_filepath = sys.argv[1]
-    city_filepath = sys.argv[2]
-    geocoder = Geocoder(state_abbr_filepath, city_filepath)
-    
-    location_text = sys.argv[3]
-    print geocoder.geocode(location_text)
-
