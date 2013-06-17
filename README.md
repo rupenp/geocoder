@@ -1,8 +1,10 @@
 Twitter Location Profile Geocoder
 ======================
-Geoconding Twitter users' location profiles into coordinates.
+Geoconding Twitter users' location profiles into coordinates.  
 
-"stateName,cityName" or "stateAbbreviation,cityName"
+This geocoder can geocode in the form of "stateName,cityName" or "stateAbbreviation,cityName".  
+
+This geocoding method is adopted in the research papers [1] [2].
 
 Usage
 ------
