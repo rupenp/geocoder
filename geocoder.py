@@ -11,7 +11,7 @@ class Geocoder:
         location_dict = {}
         for line in open(self.city_filepath, 'r'):
             name, point = line.rstrip().split(':')
-            city, state = name.split('\t')
+            city, state = name.lower().split('\t')
             point = point.split('\t')
             if not state in location_dict: location_dict[state] = {}
             location_dict[state][city] = point
@@ -20,12 +20,12 @@ class Geocoder:
     def make_state_abbr_dict(self):
         state_abbr_dict = {}
         for line in open(self.state_abbr_filepath, 'r'):
-            full, abbr = line.rstrip().split(',')
+            full, abbr = line.rstrip().lower().split(',')
             state_abbr_dict[full] = abbr 
         return state_abbr_dict
 
     def geocode(self, location_text):
-        match = re.match('\s?(\w+)\s?,\s?(\w+)\s?', location_text)
+        match = re.match('\s?(\w+)\s?,\s?(\w+)\s?', location_text.lower())
         if match == None:
             return None
         else:
